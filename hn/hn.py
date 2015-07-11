@@ -22,16 +22,6 @@ class HN(object):
     def __init__(self):
         self.more = ''
 
-    # def _get_next_page(self, soup):
-    #     """
-    #     Get the relative url of the next page (The "More" link at
-    #     the bottom of the page)
-    #     """
-    #     table = soup.findChildren('table')[2]  # table with all submissions
-    #     # the last row of the table contains the relative url of the next
-    #     # page
-    #     return table.findChildren(['tr'])[-1].find('a').get('href').replace(
-    #         BASE_URL, '').lstrip('//')
 
     def _get_zipped_rows(self, soup):
         """
@@ -334,15 +324,7 @@ class Story(object):
             current_page += 1
 
         previous_comment = None
-        # for comment in comments:
-        # if comment.level == 0:
-        #         previous_comment = comment
-        #     else:
-        #         level_difference = comment.level - previous_comment.level
-        #         previous_comment.body_html += '\n' + '\t' * level_difference \
-        #                                       + comment.body_html
-        #         previous_comment.body += '\n' + '\t' * level_difference + \
-        #                                  comment.body
+    
         return comments
 
     @classmethod
